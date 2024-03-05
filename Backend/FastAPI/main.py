@@ -4,5 +4,9 @@ from typing import Union
 app = FastAPI()
 
 @app.get("/")   
-def read_root():
-    return {"Hello": "World"}
+async def root():
+    return "Hola FastAPI"
+
+@app.get("/url")   
+async def url():
+    return { "url":"https://mouredev.com/python" }
